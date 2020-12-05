@@ -12,13 +12,13 @@ touch "write.sh"
 echo "export WRITING_DIR=$WRITER_DIR" >> "env-variables.sh"
 
 
-curl -K "https://raw.githubusercontent.com/smcalilly/writer/main/note.sh/src/note.sh" -o write.sh
+curl "https://raw.githubusercontent.com/smcalilly/writer/main/note.sh/src/note.sh" -o write.sh
 chmod +x write.sh
 
-curl -K "https://raw.githubusercontent.com/smcalilly/writer/main/install.sh" -o install.sh
+curl "https://raw.githubusercontent.com/smcalilly/writer/main/install.sh" -o install.sh
 chmod +x install.sh
 
-curl -K "https://raw.githubusercontent.com/smcalilly/writer/main/note.sh/Makefile" -o Makefile
+curl "https://raw.githubusercontent.com/smcalilly/writer/main/note.sh/Makefile" -o Makefile
 
 make install
 ./install.sh
