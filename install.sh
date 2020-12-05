@@ -88,6 +88,13 @@ walkthrough_guide() {
 }
 
 
+echo "$WRITER_DIR"
+mkdir -p "$WRITER_DIR"
+cd "$WRITER_DIR"
+
+touch -p "env-variables.sh"
+
+
 
 echo "Hi - hope you are well."
 echo
