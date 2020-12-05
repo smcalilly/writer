@@ -13,7 +13,7 @@ if [ -n "${WRITER_DIR+1}" ]; then
     echo "export WRITER_DIR=$WRITER_DIR" > "env-variables.sh"
 
 
-    curl "https://raw.githubusercontent.com/smcalilly/writer/main/note.sh/src/note.sh" -o write.sh
+    curl "https://raw.githubusercontent.com/smcalilly/writer/main/write.sh/src/write.sh" -o write.sh
     chmod +x write.sh
 
     curl "https://raw.githubusercontent.com/smcalilly/writer/main/install.sh" -o install.sh
