@@ -9,8 +9,6 @@ mkdir -p ".src" && cd .src
 touch "env-variables.sh"
 touch "install.sh"
 touch "write.sh"
-echo "export WRITING_DIR=$WRITER_DIR" >> "env-variables.sh"
-
 
 curl "https://raw.githubusercontent.com/smcalilly/writer/main/note.sh/src/note.sh" -o write.sh
 chmod +x write.sh
@@ -20,8 +18,8 @@ chmod +x install.sh
 
 curl "https://raw.githubusercontent.com/smcalilly/writer/main/note.sh/Makefile" -o Makefile
 
-make install
 ./install.sh
+make install
 
 # curl
 # create directory
