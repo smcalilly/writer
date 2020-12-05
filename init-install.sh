@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -x
-source "env-variables.sh"
 
 echo "$WRITER_DIR"
 mkdir -p "$WRITER_DIR"
