@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 source "env-variables.sh"
+set -x
 
 set_user_editor() {
     echo "What is the executable name for your preferred text editor (i.e. vim or nano or atom or subl)?"
@@ -87,12 +88,13 @@ walkthrough_guide() {
     echo
 }
 
+# if [ -n "$WRITER_DIR" ]; then
 
-echo "$WRITER_DIR"
-mkdir -p "$WRITER_DIR"
-cd "$WRITER_DIR"
+#     echo "$WRITER_DIR"
+#     mkdir -p "$WRITER_DIR"
+#     cd "$WRITER_DIR"
 
-touch -p "env-variables.sh"
+#     touch -p "env-variables.sh" > 
 
 
 
