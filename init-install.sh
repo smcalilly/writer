@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source "env-variables.sh"
 
 echo "$WRITER_DIR"
 mkdir -p "$WRITER_DIR"
