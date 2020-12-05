@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-if [ -z ${NOTE_DIR+x} ]; then
-  echo "Error: Please configure and export NOTE_DIR environment variable."
+if [ -z ${WRITING_DIR+x} ]; then
+  echo "Error: Please configure and export WRITING_DIR environment variable."
   exit 1
 fi
 
@@ -26,30 +26,30 @@ do
     esac
 done
 
-mkdir -p "$NOTE_DIR"
+mkdir -p "$WRITING_DIR"
 
 # if there is no argument, then write to the daily file
 if [ $# -eq 0 ]; then
-    mkdir -p "$NOTE_DIR/daily"
-    NOTE_PATH="$NOTE_DIR/daily/$(date +'%Y-%m-%d').md"
+    mkdir -p "$WRITING_DIR/daily"
+    NOTE_PATH="$WRITING_DIR/daily/$(date +'%Y-%m-%d').md"
     $EDITOR $NOTE_PATH
 
 # decide which filename/directory & open the text editor
 elif [ -n "${directory+1}" ] || [ -n "${file_name+1}" ]; then
     if [ -n "${directory+1}" ] && [  -n "${file_name+1}" ]; then
-        mkdir -p $NOTE_DIR/$directory
-        NOTE_PATH="$NOTE_DIR/$directory/$file_name.md"
+        mkdir -p $WRITING_DIR/$directory
+        NOTE_PATH="$WRITING_DIR/$directory/$file_name.md"
     elif [ -n "${directory+1}" ] && [ ! -n "${file_name+1}" ]; then
-        mkdir -p $NOTE_DIR/$directory
-        NOTE_PATH="$NOTE_DIR/$directory/$(date +'%Y-%m-%d').md"
+        mkdir -p $WRITING_DIR/$directory
+        NOTE_PATH="$WRITING_DIR/$directory/$(date +'%Y-%m-%d').md"
     else
-        NOTE_PATH="$NOTE_DIR/${file_name}.md"
+        NOTE_PATH="$WRITING_DIR/${file_name}.md"
     fi
   $EDITOR $NOTE_PATH
 
 # search with grep and open the files with less
 elif [ -n "${grp+1}" ]; then
-    notes=$(grep -nr "$2" $NOTE_DIR -l)
+    notes=$(grep -nr "$2" $WRITING_DIR -l)
     echo $notes
     less -p "$2" $notes 
 else
