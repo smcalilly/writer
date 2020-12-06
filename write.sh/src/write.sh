@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
-source "env-variables.sh"
+source ".src/env-variables.sh"
 
 if [ -z ${WRITING_DIR+x} ]; then
   echo "Error: Please configure and export WRITING_DIR environment variable."
