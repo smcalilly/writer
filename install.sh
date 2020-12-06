@@ -8,7 +8,7 @@ set_user_editor() {
     echo
     
     # todo bug - need to validate editor
-    echo "Thanks. We're going to use $EDITOR whenever we open any of your writing."
+    echo "Thanks. Your writing will open in $EDITOR."
 
     # bad way of adding the $EDITOR variable
     cat .src/pre-writer.sh | head -2 >> .src/writer.sh
@@ -111,6 +111,9 @@ reconfigure_writer_directory() {
     fi
 }
 
+echo
+echo
+echo
 echo
 echo
 echo "~~!~~!--!~~!--!~~!~~"
