@@ -1,5 +1,7 @@
 # writer
-A CLI to write without pause. Based upon [note.sh](https://github.com/hachibu/note.sh) - "A simple shell script for managing your random daily notes." Use `note.sh` if you want a simple note taking CLI. Use `writer` if you want a slightly less simple and somewhat opinionated (if you want) writing CLI.
+A CLI to write without pause. 
+
+Based upon [note.sh](https://github.com/hachibu/note.sh) - "A simple shell script for managing your random daily notes." Use `note.sh` if you want a simple note taking CLI. Use `writer` if you want a slightly less simple and somewhat opinionated (if you want) writing CLI.
 
 ## Installation
 Install with this clunky command, with `WRITER_DIR` set as the directory name where you want your writing to live:
