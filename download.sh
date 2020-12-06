@@ -10,7 +10,7 @@ if [ -n "${WRITER_DIR+1}" ]; then
     touch "env-variables.sh"
     touch "install.sh"
     touch "write.sh"
-    echo "export WRITER_DIR=$WRITER_DIR" > "env-variables.sh"
+    echo "export WRITER_DIR=$HOME/$WRITER_DIR" > "env-variables.sh"
 
 
     curl "https://raw.githubusercontent.com/smcalilly/writer/main/write.sh/src/write.sh" -o write.sh

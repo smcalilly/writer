@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "env-variables.sh"
+source ".src/env-variables.sh"
 set -x
 
 set_user_editor() {
@@ -131,11 +131,11 @@ else
 fi
 
 # Save the EDITOR and WRITING_DIR environment variables
-echo "export EDITOR=$EDITOR" > "env-variables.sh"
-echo "export WRITING_DIR=$WRITING_DIR_NAME" >> "env-variables.sh"
+echo "export EDITOR=$EDITOR" > ".src/env-variables.sh"
+echo "export WRITING_DIR=$HOME/$WRITING_DIR_NAME" >> ".src/env-variables.sh"
 
 # Reload environment variables
-source "env-variables.sh"
+source ".src/env-variables.sh"
 
 
 # copy all the source code into the writing, as a hidden file
