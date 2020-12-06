@@ -19,7 +19,7 @@ if [ -n "${WRITER_DIR+1}" ]; then
     curl "https://raw.githubusercontent.com/smcalilly/writer/main/install.sh" -o install.sh
     chmod +x install.sh
 
-    curl "https://raw.githubusercontent.com/smcalilly/writer/main/note.sh/Makefile" -o Makefile
+    curl "https://raw.githubusercontent.com/smcalilly/writer/main/write.sh/Makefile" -o Makefile
 fi
 
 
