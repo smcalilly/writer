@@ -7,7 +7,7 @@ Install with this clunky command:
 (curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | WRITER_DIR='writer' bash) && cd "$WRITER_DIR" && .src/install.sh
 ```
 
-This will download all the code, then walk you through some steps to setup your writer. WRITER_DIR should be the name of the directory where you want your writing to live. 
+This will download all the code, then walk you through some steps to setup your writer. Set `WRITER_DIR` to the name of the directory where you want your writing to live. 
 
 ## Write with it
 If you want to make an alias for the command, in your shell's startup file, add:
