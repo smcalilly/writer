@@ -1,5 +1,5 @@
 # writer
-A CLI to write without pause. Based upon [note.sh](https://github.com/hachibu/note.sh) - "A simple shell script for managing your random daily notes."
+A CLI to write without pause. Based upon [note.sh](https://github.com/hachibu/note.sh) - "A simple shell script for managing your random daily notes." Use that if you want a simple, single thing.
 
 ## Installation
 Install with this clunky command:
