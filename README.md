@@ -35,6 +35,11 @@ If you want to write to a named file within a directory:
 writer -f turnip-green-soup -d good-recipes
 ```
 
+You can search with all the files in your writer, with `grep`:
+```
+writer -g turnip
+```
+
 To get some help:
 ```
 writer -h
