@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
+set -x
 
 if [ -z ${WRITER_DIR+x} ]; then
   echo "Error: Please configure and export WRITER_DIR environment variable."
+  exit 1
+fi
+
+if [ -z ${EDITOR+x} ]; then
+  echo "Error: Please configure and export EDITOR environment variable."
   exit 1
 fi
 
@@ -94,11 +100,23 @@ do
     esac
 done
 
-# if there is no argument, then write to the daily file
-if [ $# -eq 0 ]; then
+
+
+function write_daily_note() {
     mkdir -p "$WRITER_DIR/notes/daily"
     NOTE_PATH="$WRITER_DIR/notes/daily/$(date +'%Y-%m-%d').md"
     $EDITOR $NOTE_PATH
+}
+
+
+if [ -p /dev/stdin ]; then
+    NOTE_PATH="$WRITER_DIR/notes/daily/$(date +'%Y-%m-%d').md"
+    cat > $EDITOR $NOTE_PATH
+fi
+
+# if there is no argument, then write to the daily file
+if [ $# -eq 0 ]; then
+    write_daily_note
 
 # decide which filename/directory & open the text editor
 elif [ -n "${directory+1}" ] || [ -n "${file_name+1}" ]; then
@@ -121,4 +139,5 @@ elif [ -n "${grp+1}" ]; then
     less -p "$2" $notes 
 else
     usage
-fi
+fibitch
+bitch
