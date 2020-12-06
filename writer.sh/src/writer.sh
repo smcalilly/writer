@@ -42,7 +42,7 @@ elif [ -n "${directory+1}" ] || [ -n "${file_name+1}" ]; then
         NOTE_PATH="$WRITER_DIR/$directory/$(date +'%Y-%m-%d').md"
     else
         mkdir -p "$WRITER_DIR/notes/scribbles"
-        NOTE_PATH="$WRITER_DIR//notes/scribbles/${file_name}.md"
+        NOTE_PATH="$WRITER_DIR/notes/scribbles/${file_name}.md"
     fi
   $EDITOR $NOTE_PATH
 
