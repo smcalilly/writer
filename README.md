@@ -46,9 +46,9 @@ writer -h
 ```
 
 ## Use with git
-The writer directory is initialized with git. I wanted version control for my writing, but this also lets me backup my writing on github and use on other devices. 
+The writer directory is initialized with git. I wanted version control for my writing, and git also lets me backup my writing and write on other devices. 
 
-Here is how I setup my writer on my other computer, for an existing writer repo.
+Here is how I setup my writer on one computer, so I could use the writer and work on writing from another computer.
 - add your git remote to the `$WRITER_DIR` repo
 - push it up to the remote
 - get on other computer & clone the repo
