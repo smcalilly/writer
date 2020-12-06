@@ -29,7 +29,7 @@ writer
 
 If you want to write a note with a filename:
 ```
-writer -f recipe-brainstorm
+writer -f vague-recipe-idea
 ```
 
 If you want to write within a directory:
