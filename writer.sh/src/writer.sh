@@ -110,8 +110,10 @@ function write_daily_note() {
 
 
 if [ -p /dev/stdin ]; then
+    #NOTE_PATH="$WRITER_DIR/notes/daily/$(date +'%Y-%m-%d').md"
+     mkdir -p "$WRITER_DIR/notes/daily"
     NOTE_PATH="$WRITER_DIR/notes/daily/$(date +'%Y-%m-%d').md"
-    cat > $EDITOR $NOTE_PATH
+    cat > $EDITOR $NOTE_PATH #$EDITOR $NOTE_PATH
 fi
 
 # if there is no argument, then write to the daily file
