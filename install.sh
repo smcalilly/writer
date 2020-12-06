@@ -25,7 +25,7 @@ set_writing_directory() {
 
 walkthrough_guide() {
     echo 
-    echo "The structure of the /$WRITER_DIR directory should look like this:"
+    echo "The structure of the $WRITER_DIR directory should look like this:"
     echo
     echo "  $WRITER_DIR/"
     echo "  |"
@@ -38,16 +38,17 @@ walkthrough_guide() {
     echo "        |scribbles/"
     echo "                  |<named-note>.md"
     echo 
-    echo "Press any key to learn how this works on the command line."
+    echo "to continue, press [return]:"
     read 
     echo
     echo "-------"
     echo
+    echo "EXAMPLE COMMANDS"
     echo
     echo "These two commands will create or open a note in either of those places:"
     echo
-    echo "    $ writer.sh                                            # opens /notes/daily/<todays-date>.md in $EDITOR"
-    echo "    $ writer.sh -f recipe-idea                             # opens /notes/scribbles/recipe-idea.md in $EDITOR"
+    echo "    writer.sh                                            # opens /notes/daily/<todays-date>.md in $EDITOR"
+    echo "    writer.sh -f recipe-idea                             # opens /notes/scribbles/recipe-idea.md in $EDITOR"
     echo 
     echo "You can write notes with either of these two options. This is the most opinionated part of the CLI." 
     echo "It's like a staging area or organized dumping ground, but accessible quickly and happily." 
@@ -61,29 +62,32 @@ walkthrough_guide() {
     echo "Important! If you change the names of these directories, it will break this feature of CLI." #todo: fix this bug or: if you don't like the names of the directories, then enter one 
     echo
     echo
-    echo "Press any key to continue to see another feature:"
+    echo "to continue, press [return]:"
     read
     echo
     echo "-------"
     echo 
+    echo "SEARCH"
     echo
     echo "You can search with grep:"
     echo
-    echo "    $ writer.sh -g okra                                    # views all the files in /$WRITER_DIR with the word 'okra'"
+    echo "    writer.sh -g okra                                    # views all the files in $WRITER_DIR with the word 'okra'"
     echo
     echo 
-    echo "Press any key to learn how to create a project."
+    echo "to continue, press [return]:"
     read 
     echo
     echo "-------"
     echo
+    echo "NAMING THINGS"
     echo
     echo "You can also create your own directories, like if you have a specific project where you want to write. Here is a command:"
-    echo "    $ writer.sh -d my-manuscript -f chapter-1       # writes to $WRITER_DIR/my-manuscript/chapter-5.md"
+    echo 
+    echo "    writer.sh -d my-manuscript -f chapter-1       # writes to $WRITER_DIR/my-manuscript/chapter-5.md"
     echo
     echo "This can be organized however you wish - you can name directories within directories and files within those directories, and recall them via the CLI."
     echo
-    echo "Of course, you don't have to use the CLI -- it's just a handy way to write from your terminal."
+    echo "Of course, you don't have to use the CLI; it's just a handy way to write from your terminal."
     echo "Once you've created a project, you can work with it however you want, like in your favorite text editor with a file system interface."
     echo "You can also use git and anything else you'd do with a normal git repo."
     echo
@@ -145,6 +149,7 @@ cd .src
 make install
 
 echo "Good luck writing !"
+echo "hint:     write.sh"
 # todo - make project opinionated
 
 
