@@ -24,9 +24,9 @@ set_writing_directory() {
 
 walkthrough_guide() {
     echo 
-    echo "The structure of the /$WRITING_DIR directory should look like this:"
+    echo "The structure of the /$WRITER_DIR directory should look like this:"
     echo
-    echo "  $WRITING_DIR/"
+    echo "  $WRITER_DIR/"
     echo "  |"
     echo "  |"
     echo "  |notes/"
@@ -68,7 +68,7 @@ walkthrough_guide() {
     echo
     echo "You can search with grep:"
     echo
-    echo "    $ write.sh -g okra                                    # views all the files in /$WRITING_DIR with the word 'okra'"
+    echo "    $ write.sh -g okra                                    # views all the files in /$WRITER_DIR with the word 'okra'"
     echo
     echo 
     echo "Press any key to learn how to create a project."
@@ -78,7 +78,7 @@ walkthrough_guide() {
     echo
     echo
     echo "You can also create your own directories, like if you have a specific project where you want to write. Here is a command:"
-    echo "    $ write.sh -d my-manuscript -f chapter-1       # writes to $WRITING_DIR/my-manuscript/chapter-5.md"
+    echo "    $ write.sh -d my-manuscript -f chapter-1       # writes to $WRITER_DIR/my-manuscript/chapter-5.md"
     echo
     echo "This can be organized however you wish - you can name directories within directories and files within those directories, and recall them via the CLI."
     echo
@@ -116,8 +116,9 @@ else
 fi
 
 echo
+echo 
 
-if [ -n "${WRITING_DIR+1}" ]; then
+if [ -n "${WRITER_DIR+1}" ]; then
     echo "You've already setup your writer. Do you want to create a new one?"
     echo "This will overwrite your existing writer settings, but it will not delete writing. y/n: [n]"
     read setup_new_writer
@@ -132,7 +133,7 @@ fi
 
 # Save the EDITOR and WRITING_DIR environment variables
 echo "export EDITOR=$EDITOR" > ".src/env-variables.sh"
-echo "export WRITING_DIR=$HOME/$WRITING_DIR_NAME" >> ".src/env-variables.sh"
+echo "export WRITER_DIR=$HOME/$WRITING_DIR_NAME" >> ".src/env-variables.sh"
 
 # Reload environment variables
 source ".src/env-variables.sh"
