@@ -12,9 +12,9 @@ set_user_editor() {
     # source ".src/env-variables.sh"
 
     # bad way of adding the $EDITOR variable
-    cat pre-writer.sh | head -2 >> .src/writer.sh
+    cat .src/pre-writer.sh | head -2 >> .src/writer.sh
     echo "export EDITOR=$EDITOR" >> .src/writer.sh
-    cat pre-writer.sh | tail -n +3 >> .src/writer.sh
+    cat .src/pre-writer.sh | tail -n +3 >> .src/writer.sh
 }
 
 set_writing_directory() {
