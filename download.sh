@@ -9,17 +9,17 @@ if [ -n "${WRITER_DIR+1}" ]; then
     mkdir -p ".src" && cd .src
     touch "env-variables.sh"
     touch "install.sh"
-    touch "write.sh"
+    touch "writer.sh"
     echo "export WRITER_DIR=$HOME/$WRITER_DIR" > "env-variables.sh"
 
 
-    curl "https://raw.githubusercontent.com/smcalilly/writer/main/write.sh/src/write.sh" -o write.sh
+    curl "https://raw.githubusercontent.com/smcalilly/writer/main/writer.sh/src/writer.sh" -o write.sh
     chmod +x write.sh
 
     curl "https://raw.githubusercontent.com/smcalilly/writer/main/install.sh" -o install.sh
     chmod +x install.sh
 
-    curl "https://raw.githubusercontent.com/smcalilly/writer/main/write.sh/Makefile" -o Makefile
+    curl "https://raw.githubusercontent.com/smcalilly/writer/main/writer.sh/Makefile" -o Makefile
 fi
 
 

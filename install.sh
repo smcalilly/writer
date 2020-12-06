@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 source ".src/env-variables.sh"
-set -x
 
 set_user_editor() {
     echo "What is the executable name for your preferred text editor (i.e. vim or nano or atom or subl)?"
@@ -47,8 +46,8 @@ walkthrough_guide() {
     echo
     echo "These two commands will create or open a note in either of those places:"
     echo
-    echo "    $ write.sh                                            # opens /notes/daily/<todays-date>.md in $EDITOR"
-    echo "    $ write.sh -f recipe-idea                             # opens /notes/scribbles/recipe-idea.md in $EDITOR"
+    echo "    $ writer.sh                                            # opens /notes/daily/<todays-date>.md in $EDITOR"
+    echo "    $ writer.sh -f recipe-idea                             # opens /notes/scribbles/recipe-idea.md in $EDITOR"
     echo 
     echo "You can write notes with either of these two options. This is the most opinionated part of the CLI." 
     echo "It's like a staging area or organized dumping ground, but accessible quickly and happily." 
@@ -70,7 +69,7 @@ walkthrough_guide() {
     echo
     echo "You can search with grep:"
     echo
-    echo "    $ write.sh -g okra                                    # views all the files in /$WRITER_DIR with the word 'okra'"
+    echo "    $ writer.sh -g okra                                    # views all the files in /$WRITER_DIR with the word 'okra'"
     echo
     echo 
     echo "Press any key to learn how to create a project."
@@ -80,7 +79,7 @@ walkthrough_guide() {
     echo
     echo
     echo "You can also create your own directories, like if you have a specific project where you want to write. Here is a command:"
-    echo "    $ write.sh -d my-manuscript -f chapter-1       # writes to $WRITER_DIR/my-manuscript/chapter-5.md"
+    echo "    $ writer.sh -d my-manuscript -f chapter-1       # writes to $WRITER_DIR/my-manuscript/chapter-5.md"
     echo
     echo "This can be organized however you wish - you can name directories within directories and files within those directories, and recall them via the CLI."
     echo
