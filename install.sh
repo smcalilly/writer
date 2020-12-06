@@ -10,6 +10,8 @@ set_user_editor() {
     
     # todo bug - need to validate editor
     echo "Thanks. We're going to use $EDITOR whenever we open any of your writing."
+    echo "export EDITOR=$EDITOR" > ".src/env-variables.sh"
+    source ".src/env-variables.sh"
 }
 
 set_writing_directory() {
@@ -88,15 +90,24 @@ walkthrough_guide() {
     echo
 }
 
-# if [ -n "$WRITER_DIR" ]; then
+reconfigure_writer_directory() {
+    if [ -n "${WRITER_DIR+1}" ]; then
+    echo "You've already setup your writer. Do you want to create a new one?"
+    echo "This will overwrite your existing writer settings, but it will not delete writing. y/n: [n]"
+    read setup_new_writer
+    echo
 
-#     echo "$WRITER_DIR"
-#     mkdir -p "$WRITER_DIR"
-#     cd "$WRITER_DIR"
+        if [ "${setup_new_writer}" == 'y' ]; then
+            set_writing_directory
+        fi
+    else
+        set_writing_directory
+    fi
 
-#     touch -p "env-variables.sh" > 
-
-
+    echo "export EDITOR=$EDITOR" > ".src/env-variables.sh"
+    echo "export WRITER_DIR=$HOME/$WRITING_DIR_NAME" >> ".src/env-variables.sh"
+    source ".src/env-variables.sh"
+}
 
 echo "Hi - hope you are well."
 echo
@@ -118,30 +129,7 @@ fi
 echo
 echo 
 
-if [ -n "${WRITER_DIR+1}" ]; then
-    echo "You've already setup your writer. Do you want to create a new one?"
-    echo "This will overwrite your existing writer settings, but it will not delete writing. y/n: [n]"
-    read setup_new_writer
-    echo
 
-    if [ "${setup_new_writer}" == 'y' ]; then
-        set_writing_directory
-    fi
-else
-    set_writing_directory
-fi
-
-# Save the EDITOR and WRITING_DIR environment variables
-echo "export EDITOR=$EDITOR" > ".src/env-variables.sh"
-echo "export WRITER_DIR=$HOME/$WRITING_DIR_NAME" >> ".src/env-variables.sh"
-
-# Reload environment variables
-source ".src/env-variables.sh"
-
-
-# copy all the source code into the writing, as a hidden file
-# create the directories and set user permissions
-# make system links
 
 echo "Your writer is setup! Would you like to do a walkthrough guide? y/n: [n]"
 read needs_walkthrough_guide
@@ -154,7 +142,8 @@ if [ "${needs_walkthrough_guide}" == 'y' ]; then
 fi
 
 
-
+cd .src
+make install
 
 echo "Good luck writing !"
 # todo - make project opinionated
