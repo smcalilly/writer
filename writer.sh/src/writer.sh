@@ -26,12 +26,10 @@ do
     esac
 done
 
-#mkdir -p "$WRITER_DIR"
-
 # if there is no argument, then write to the daily file
 if [ $# -eq 0 ]; then
-    mkdir -p "$WRITER_DIR/daily"
-    NOTE_PATH="$WRITER_DIR/daily/$(date +'%Y-%m-%d').md"
+    mkdir -p "$WRITER_DIR/notes/daily"
+    NOTE_PATH="$WRITER_DIR/notes/daily/$(date +'%Y-%m-%d').md"
     $EDITOR $NOTE_PATH
 
 # decide which filename/directory & open the text editor
@@ -43,7 +41,8 @@ elif [ -n "${directory+1}" ] || [ -n "${file_name+1}" ]; then
         mkdir -p $WRITER_DIR/$directory
         NOTE_PATH="$WRITER_DIR/$directory/$(date +'%Y-%m-%d').md"
     else
-        NOTE_PATH="$WRITER_DIR/${file_name}.md"
+        mkdir -p "$WRITER_DIR/notes/scribbles"
+        NOTE_PATH="$WRITER_DIR//notes/scribbles/${file_name}.md"
     fi
   $EDITOR $NOTE_PATH
 

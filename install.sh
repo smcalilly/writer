@@ -9,8 +9,6 @@ set_user_editor() {
     
     # todo bug - need to validate editor
     echo "Thanks. We're going to use $EDITOR whenever we open any of your writing."
-    # echo "export EDITOR=$EDITOR" >> ".src/env-variables.sh"
-    # source ".src/env-variables.sh"
 
     # bad way of adding the $EDITOR variable
     cat .src/pre-writer.sh | head -2 >> .src/writer.sh
@@ -111,15 +109,15 @@ reconfigure_writer_directory() {
     else
         set_writing_directory
     fi
-
-    # echo "export EDITOR=$EDITOR" > ".src/env-variables.sh"
-    # echo "export WRITER_DIR=$HOME/$WRITING_DIR_NAME" >> ".src/env-variables.sh"
-    # source ".src/env-variables.sh"
 }
 
 echo
 echo
-echo "--!~~--!~~--!~~--!~~"
+echo "~~!~~!--!~~!--!~~!~~"
+echo
+echo "   !   writer   !   "
+echo
+echo "~~!~~!--!~~!--!~~!~~"
 echo
 echo
 echo "Hi - hope you are well. Thanks for downloading writer."
