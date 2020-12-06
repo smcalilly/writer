@@ -40,7 +40,7 @@ If you want to write to a named file within a directory:
 writer -d good-recipes -f turnip-green-soup
 ```
 
-You can search with all the files in your writer, with `grep`:
+You can search through all the writing in your `writer` with `grep`:
 ```
 writer -g turnip
 ```
