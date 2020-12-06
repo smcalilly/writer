@@ -44,6 +44,8 @@ You can search through all the writing in your `writer` with `grep`:
 ```
 writer -g turnip
 ```
+You'll view the results in `less`.
+
 
 To get some help:
 ```
