@@ -143,7 +143,11 @@ fi
 echo
 echo 
 
-
+git init
+git add .
+git commit -m "~!~ initialized writer ~!~"
+echo
+echo
 
 echo "Your writer is setup! Would you like to do a walkthrough guide? y/n: [n]"
 read needs_walkthrough_guide
