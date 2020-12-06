@@ -10,7 +10,7 @@ set_user_editor() {
     
     # todo bug - need to validate editor
     echo "Thanks. We're going to use $EDITOR whenever we open any of your writing."
-    echo "export EDITOR=$EDITOR" > ".src/env-variables.sh"
+    echo "export EDITOR=$EDITOR" >> ".src/env-variables.sh"
     source ".src/env-variables.sh"
 }
 
