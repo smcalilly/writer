@@ -14,6 +14,7 @@ set_user_editor() {
     cat .src/pre-writer.sh | head -2 >> .src/writer.sh
     echo "export EDITOR=$EDITOR" >> .src/writer.sh
     cat .src/pre-writer.sh | tail -n +3 >> .src/writer.sh
+    rm .src/pre-writer.sh
 }
 
 set_writing_directory() {

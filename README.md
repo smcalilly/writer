@@ -40,6 +40,15 @@ To get some help:
 writer -h
 ```
 
+## Use with git
+The writer directory is initialized with git. I wanted version control for my writing, but this also lets me backup my writing on github and use on other devices. 
+
+Here is how I setup my writer on my other computer, for an existing writer repo.
+- add your git remote to the `$WRITER_DIR` repo
+- push it up to the remote
+- get on other computer & clone the repo
+- `cd` into the repo and in your terminal, run `.src/.install.sh`
+
 ## Uninstall
 ```
 cd $WRITER_DIR/.src
