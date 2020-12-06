@@ -12,7 +12,7 @@ Install with this clunky command, with `WRITER_DIR` set as the directory name wh
 This will download all the code and walk you through some steps to install your `writer`.
 
 ## Write with it
-To write in your daily note:
+Write in your daily note:
 ```
 writer.sh
 ```
@@ -22,22 +22,22 @@ If you want to make an alias for the command, in your shell's startup file, add:
 alias writer='writer.sh'
 ```
 
-Then you can write in your daily note like this:
+Then, you can write in your daily note again:
 ```
 writer
 ```
 
-If you want to write a note with a filename:
+Write a note with a filename:
 ```
 writer -f vague-recipe-idea
 ```
 
-If you want to write within a directory:
+Write within a directory:
 ```
 writer -d good-recipes
 ```
 
-If you want to write to a named file within a directory:
+Write to a named file within a directory:
 ```
 writer -d good-recipes -f turnip-green-soup
 ```
