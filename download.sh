@@ -1,16 +1,5 @@
 #!/usr/bin/env bash
 
-set_user_editor() {
-    echo "What is the executable name for your preferred text editor (i.e. vim or nano or atom or subl)?"
-
-    echo "Type the name and hit enter: [nano]"
-    read EDITOR
-    
-    # todo bug - need to validate editor
-    echo "Thanks. We're going to use $EDITOR whenever we open any of your writing."
-}
-
-# set_user_editor
 
 if [ -n "${WRITER_DIR+1}" ]; then
     echo "$WRITER_DIR"
