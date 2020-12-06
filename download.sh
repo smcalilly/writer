@@ -10,7 +10,7 @@ set_user_editor() {
     echo "Thanks. We're going to use $EDITOR whenever we open any of your writing."
 }
 
-set_user_editor
+# set_user_editor
 
 if [ -n "${WRITER_DIR+1}" ]; then
     echo "$WRITER_DIR"
@@ -18,29 +18,26 @@ if [ -n "${WRITER_DIR+1}" ]; then
     cd "$WRITER_DIR"
 
     mkdir -p ".src" && cd .src
-    touch "env-variables.sh"
     touch "install.sh"
-    touch "writer.sh"
-   
-    # echo "export WRITER_DIR=$HOME/$WRITER_DIR" > "env-variables.sh"
+    chmod +x install.sh
 
-    
-    curl "https://raw.githubusercontent.com/smcalilly/writer/main/writer.sh/src/writer.sh" | head -1 >> writer.sh
-    echo "export WRITER_DIR=$HOME/$WRITER_DIR" >> "writer.sh"
-    echo "export EDITOR=$EDITOR" >> "writer.sh"
-    curl "https://raw.githubusercontent.com/smcalilly/writer/main/writer.sh/src/writer.sh" | tail -n +2 >> writer.sh
+    touch "writer.sh"
     chmod +x writer.sh
+    touch "pre-writer.sh"
+    chmod +x pre-writer.sh
+    
+    # add first line of the file
+    curl "https://raw.githubusercontent.com/smcalilly/writer/main/writer.sh/src/writer.sh" | head -1 >> pre-writer.sh
+    
+    # add the $WRITER_DIR variable
+    echo "export WRITER_DIR=$HOME/$WRITER_DIR" >> "pre-writer.sh"
+
+    # then add the rest of the code
+    curl "https://raw.githubusercontent.com/smcalilly/writer/main/writer.sh/src/writer.sh" | tail -n +2 >> pre-writer.sh
+    
 
     curl "https://raw.githubusercontent.com/smcalilly/writer/main/install.sh" -o install.sh
-    chmod +x install.sh
+  
 
     curl "https://raw.githubusercontent.com/smcalilly/writer/main/writer.sh/Makefile" -o Makefile
 fi
-
-
-# ./install.sh
-# make install
-
-# curl
-# create directory
-# 

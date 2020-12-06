@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-source ".src/env-variables.sh"
 
 set_user_editor() {
     echo "What is the executable name for your preferred text editor (i.e. vim or nano or atom or subl)?"
@@ -11,6 +10,11 @@ set_user_editor() {
     echo "Thanks. We're going to use $EDITOR whenever we open any of your writing."
     echo "export EDITOR=$EDITOR" >> ".src/env-variables.sh"
     source ".src/env-variables.sh"
+
+    # bad way of adding the $EDITOR variable
+    cat pre-writer.sh | head -2 >> writer.sh
+    echo "export EDITOR=$EDITOR" >> writer.sh
+    cat pre-writer.sh | tail -n +3 >> writer.sh
 }
 
 set_writing_directory() {
@@ -146,6 +150,7 @@ fi
 
 
 cd .src
+
 make install
 
 echo "Good luck writing !"
