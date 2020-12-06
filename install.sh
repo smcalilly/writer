@@ -8,13 +8,13 @@ set_user_editor() {
     
     # todo bug - need to validate editor
     echo "Thanks. We're going to use $EDITOR whenever we open any of your writing."
-    echo "export EDITOR=$EDITOR" >> ".src/env-variables.sh"
-    source ".src/env-variables.sh"
+    # echo "export EDITOR=$EDITOR" >> ".src/env-variables.sh"
+    # source ".src/env-variables.sh"
 
     # bad way of adding the $EDITOR variable
-    cat pre-writer.sh | head -2 >> writer.sh
-    echo "export EDITOR=$EDITOR" >> writer.sh
-    cat pre-writer.sh | tail -n +3 >> writer.sh
+    cat pre-writer.sh | head -2 >> .src/writer.sh
+    echo "export EDITOR=$EDITOR" >> .src/writer.sh
+    cat pre-writer.sh | tail -n +3 >> .src/writer.sh
 }
 
 set_writing_directory() {
@@ -116,7 +116,9 @@ reconfigure_writer_directory() {
     source ".src/env-variables.sh"
 }
 
-echo "Hi - hope you are well."
+echo
+echo
+echo "Hi - hope you are well. Thanks for downloading writer."
 echo
 echo "Whenever you use this CLI, your writing will automatically open in a text editor."
 
