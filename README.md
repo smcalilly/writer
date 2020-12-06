@@ -17,10 +17,7 @@ To write in your daily note:
 writer.sh
 ```
 
-If you want to make an alias for the command, in your shell's startup file, add:
-```
-alias writer='writer.sh'
-```
+If you want to make an alias for the command, in your shell's startup file, add: `alias writer='writer.sh'`
 
 Then you can write in your daily note like this:
 ```
