@@ -166,7 +166,7 @@ cd .src
 make install
 
 echo "Good luck writing !"
-echo "hint:     write.sh"
+echo "hint:     writer.sh"
 # todo - make project opinionated
 
 
