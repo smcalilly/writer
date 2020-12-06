@@ -9,7 +9,7 @@ Install with this clunky command, with `WRITER_DIR` set as the directory name wh
 (curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | WRITER_DIR='writer' bash) && cd "$WRITER_DIR" && .src/install.sh
 ```
 
-This will download all the code and walk you through some steps to install your writer.
+This will download all the code and walk you through some steps to install your `writer`.
 
 ## Write with it
 To write in your daily note:
