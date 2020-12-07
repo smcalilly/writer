@@ -3,7 +3,6 @@ export WRITER_DIR=/Users/sammcalilly/writer
 export EDITOR=nano
 
 set -euo pipefail
-set -x
 
 if [ -z ${WRITER_DIR+x} ]; then
   echo "Error: Please configure and export WRITER_DIR environment variable."
