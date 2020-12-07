@@ -144,13 +144,9 @@ fi
 echo
 echo 
 
-git init
-git add .
-git commit -m "~!~ initialized writer ~!~"
-echo
-echo
 
-echo "Your writer is setup! Would you like to do a walkthrough guide? y/n: [n]"
+
+echo "Your writer is setup! Would you like to do a walkthrough guide? [y/n]:"
 read needs_walkthrough_guide
 
 echo 
@@ -163,7 +159,7 @@ fi
 
 cd .src
 
-make install
+$(make install 2> /dev/null)
 
 echo "Good luck writing !"
 echo "hint:     writer.sh"
