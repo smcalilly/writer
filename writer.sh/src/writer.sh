@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+export WRITER_DIR=/Users/sammcalilly/writer
+export EDITOR=nano
 
 set -euo pipefail
 set -x
@@ -87,11 +89,11 @@ function usage() {
   echo "    -g grep [pattern]"
   echo
   echo
-  walkthrough_guide
+#   walkthrough_guide
 }
 
 # parse any arguments
-while getopts g:d:f: flag 
+while getopts n:g:d:f: flag 
 do
     case "${flag}" in
         f) file_name=${OPTARG};;
@@ -101,45 +103,43 @@ do
 done
 
 
+# parse_stdin() {
+#     if [ -p /dev/stdin ]; then
+#         input="$(< /dev/stdin)"
+#         echo >> $NOTE_PATH
+#         echo "$input" >> $NOTE_PATH
+#     fi
+#     echo "Words written to $NOTE_PATH" >&2
+# }
 
-function write_daily_note() {
-    mkdir -p "$WRITER_DIR/notes/daily"
-    NOTE_PATH="$WRITER_DIR/notes/daily/$(date +'%Y-%m-%d').md"
-    $EDITOR $NOTE_PATH
-}
 
+# todo bug: parse out any / from arguments
 
-if [ -p /dev/stdin ]; then
-    #NOTE_PATH="$WRITER_DIR/notes/daily/$(date +'%Y-%m-%d').md"
-     mkdir -p "$WRITER_DIR/notes/daily"
-    NOTE_PATH="$WRITER_DIR/notes/daily/$(date +'%Y-%m-%d').md"
-    cat > $EDITOR $NOTE_PATH #$EDITOR $NOTE_PATH
-fi
+writing_target="$WRITER_DIR"
 
-# if there is no argument, then write to the daily file
 if [ $# -eq 0 ]; then
-    write_daily_note
-
-# decide which filename/directory & open the text editor
-elif [ -n "${directory+1}" ] || [ -n "${file_name+1}" ]; then
-    if [ -n "${directory+1}" ] && [  -n "${file_name+1}" ]; then
-        mkdir -p $WRITER_DIR/$directory
-        NOTE_PATH="$WRITER_DIR/$directory/$file_name.md"
-    elif [ -n "${directory+1}" ] && [ ! -n "${file_name+1}" ]; then
-        mkdir -p $WRITER_DIR/$directory
-        NOTE_PATH="$WRITER_DIR/$directory/$(date +'%Y-%m-%d').md"
-    else
-        mkdir -p "$WRITER_DIR/notes/scribbles"
-        NOTE_PATH="$WRITER_DIR/notes/scribbles/${file_name}.md"
-    fi
-  $EDITOR $NOTE_PATH
-
-# search with grep and open the files with less
-elif [ -n "${grp+1}" ]; then
-    notes=$(grep -nr "$2" $WRITER_DIR -l)
-    echo $notes
-    less -p "$2" $notes 
-else
     usage
-fibitch
-bitch
+elif [ -n "${grp+1}" ]; then
+    writing=$(grep -nr "$2" $WRITER_DIR -l)
+    echo $writing
+    less -p "$2" $writing 
+else
+    if [[ -n "${directory+1}" ]]; then
+        writing_target="$writing_target/$directory"
+        mkdir -p $writing_target
+    fi
+
+    if [[ -n "${file_name+1}" ]]; then
+        writing_target="$writing_target/$file_name.md"
+    elif [[ $1 == "-n" ]]; then 
+        mkdir -p "$writing_target/notes"
+        writing_target="$writing_target/notes/$(date +'%Y-%m-%d').md"
+    else
+        writing_target="$writing_target/$(date +'%Y-%m-%d').md"
+    fi
+
+    echo $writing_target
+
+    # Open text editor
+    $EDITOR $writing_target
+fi
