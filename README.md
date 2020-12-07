@@ -94,7 +94,6 @@ A new file is created each day. It's like a staging area or organized dumping gr
 You can also create your own directories, like if you have a specific project where you want to write. Here is a command that will write a daily note in a new directory:
 ```
     writer.sh -d my-manuscript -n       # writes to $WRITER_DIR/my-manuscript/<todays-date>.md
-    
 ```
 
 You can also name a writing file in a directory:
