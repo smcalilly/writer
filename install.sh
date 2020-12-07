@@ -9,8 +9,9 @@ set_user_editor() {
     
     # todo bug - need to validate editor
     echo "Thanks. Your writing will open in $EDITOR."
-
+    
     # bad way of adding the $EDITOR variable
+    echo $EDITOR
     cat .src/pre-writer.sh | head -2 >> .src/writer.sh
     echo "export EDITOR=$EDITOR" >> .src/writer.sh
     cat .src/pre-writer.sh | tail -n +3 >> .src/writer.sh
@@ -133,7 +134,15 @@ if [ -n "${EDITOR+1}" ]; then
 
     if [ "${use_existing_editor}" == 'n' ]; then
         set_user_editor
+    else
+        # bad way of adding the $EDITOR variable
+        cat .src/pre-writer.sh | head -2 >> .src/writer.sh
+        echo "export EDITOR=$EDITOR" >> .src/writer.sh
+        cat .src/pre-writer.sh | tail -n +3 >> .src/writer.sh
+        rm .src/pre-writer.sh
     fi
+
+    
 else
    set_user_editor
 fi
