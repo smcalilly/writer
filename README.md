@@ -10,12 +10,7 @@ export WRITER_DIR='writer'
 ```
 Restart your shell, then download and install:
 ```
-# download the code 
-# be sure to use the curl command wrapped in the $(...) so the writer's directory is set
-$(curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | bash)
-
-# `cd` into the new $WRITER_DIR directory
-# and install the code
+curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | bash
 cd "$WRITER_DIR"
 .src/install.sh
 cd ..
