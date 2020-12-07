@@ -59,6 +59,13 @@ To get some help:
 writer -h
 ```
 
+### stdin
+The writer also takes stdin:
+```
+echo "hello yall" | ./writer.sh -n
+./writer.sh -n <<<"woooooo" 
+```
+
 ## how it works
 The basic structure of the $WRITER_DIR directory should look like this:
 
