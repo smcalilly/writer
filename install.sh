@@ -114,9 +114,6 @@ reconfigure_writer_directory() {
 
 echo
 echo
-echo
-echo
-echo
 echo "~~!~~!--!~~!--!~~!~~"
 echo
 echo "   !   writer   !   "
@@ -163,7 +160,6 @@ $(make install 2> /dev/null)
 
 echo "Good luck writing !"
 echo "hint:     writer.sh"
-# todo - make project opinionated
 
 
 # echo "Within that directory, you have a /notes directory. This directory can be tracked by git."
