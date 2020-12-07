@@ -65,6 +65,8 @@ The writer also takes stdin:
 echo "hello yall" | ./writer.sh -n
 
 ./writer.sh -n <<<"woooooo" 
+
+echo "i can send sentences to named writing too" | ./writer.sh -f test -d test-dir 
 ```
 
 ## how it works
