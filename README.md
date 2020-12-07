@@ -76,7 +76,7 @@ This command will open a daily note to write in:
     writer.sh -n                 # opens /notes/<todays-date>.md in $EDITOR 
 ```
 
-A new file is created each day. It's like a staging area or organized dumping ground, but accessible quickly and happily. An aggregation of notes in the same file throughout a day.  
+A new file is created each day. It's like a staging area or organized dumping ground, but accessible quickly. An aggregation of notes in the same file throughout a day.  
 
 **Important!** If you change the names of the `notes` directory, it will break this feature of CLI.
 
