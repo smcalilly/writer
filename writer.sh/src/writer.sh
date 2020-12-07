@@ -16,21 +16,33 @@ if [ -z ${EDITOR+x} ]; then
 fi
 
 function usage() {
-  echo "Usage: writer.sh [action]"
-  echo
-  echo "  ACTIONS:"
-  echo "    -n [notepad for each day]"
-  echo "    -f [file_name]"
-  echo "    -d [directory]"
-  echo "    -g grep [pattern]"
-  echo
-  echo
-  echo "  EXAMPLES:"
-  echo "      writer.sh -n                               # opens a daily note to write in"
-  echo "      writer.sh -d project-dir -f file-name      # opens a writing file named file-name in the project-dir"
-  echo "      writer.sh -g collards                      # searches for the word 'collards' in your writer"
-  echo 
-  echo "visit https:"
+    echo
+    echo "~~!~~!--!~~!--!~~!~~"
+    echo
+    echo "   !   writer   !   "
+    echo
+    echo "~~!~~!--!~~!--!~~!~~"
+    echo
+    echo
+    echo "Usage: writer.sh [action]"
+    echo
+    echo "  ACTIONS:"
+    echo "    -n [notepad for each day]"
+    echo "    -f [file_name]"
+    echo "    -d [directory]"
+    echo "    -g grep [pattern]"
+    echo
+    echo
+    echo "  EXAMPLES:"
+    echo "      writer.sh -n                               # opens a daily note to write in"
+    echo "      writer.sh -d project-dir -f file-name      # opens a writing file named file-name in the project-dir"
+    echo "      writer.sh -g collards                      # searches for the word 'collards' in your writer"
+    echo 
+    echo
+    echo "visit https://github.com/smcalilly/writer#how-it-works for more details"
+    echo
+    echo
+    echo "~~!~~!--!~~!--!~~!~~"
 }
 
 # parse any arguments
