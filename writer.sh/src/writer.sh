@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-export WRITER_DIR=/Users/sammcalilly/writer
-export EDITOR=nano
-
 set -euo pipefail
 
 if [ -z ${WRITER_DIR+x} ]; then
