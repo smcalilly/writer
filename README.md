@@ -1,12 +1,19 @@
 # writer
-A CLI to write without pause. 
+A CLI to write without restraint. 
 
 Based upon [note.sh](https://github.com/hachibu/note.sh) - "A simple shell script for managing your random daily notes." Use `note.sh` if you want a simple note taking CLI. Use `writer` if you want a slightly less simple and somewhat opinionated (if you want) writing CLI.
 
 ## Installation
-Install with this clunky command, setting `WRITER_DIR` as the directory name where you want your writing to live:
+In your shell profile, set the name of the directory for your writer (where you want your writing to live):
 ```
-(curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | WRITER_DIR='writer' bash) && cd "$WRITER_DIR" && .src/install.sh
+export WRITER_DIR='writer'
+```
+Restart your shell, then download and install:
+```
+curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | bash
+cd "$WRITER_DIR"
+.src/install.sh
+cd ..
 ```
 
 This will download all the code and create a directory for all of your writing. It will also walk you through some steps to finish setting up your `writer`.
@@ -111,16 +118,7 @@ You can search with grep:
 ```
 
 ## Use with git
-The `$WRITER_DIR` directory is initialized with git. I wanted version control for my writing, and git also lets me backup my writing and write on other devices. 
-
-Here is how I setup my writer on one computer, so I could use the writer and work on writing from another computer.
-- add your git remote to the `$WRITER_DIR` repo
-- push it up to the remote
-- get on other computer & clone the repo
-- `cd` into the repo and in your terminal, run `.src/.install.sh`
-
-
-
+I wanted version control for my writing, and git also lets me backup my writing and write on other devices, so this is the perfect setup to use git with my writing. You can either initialize it at the `writer`'s root directory or have an individual per directory/project.
 
 ## Uninstall
 ```
