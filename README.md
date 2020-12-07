@@ -63,6 +63,7 @@ writer -h
 The writer also takes stdin:
 ```
 echo "hello yall" | ./writer.sh -n
+
 ./writer.sh -n <<<"woooooo" 
 ```
 
