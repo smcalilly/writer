@@ -1,7 +1,7 @@
 # writer
 A CLI to write without restraint. 
 
-Based upon [note.sh](https://github.com/hachibu/note.sh) - "A simple shell script for managing your random daily notes." Use `note.sh` if you want a simple note taking CLI. Use `writer` if you want a slightly less simple and somewhat opinionated (if you want) writing CLI.
+Based upon [note.sh](https://github.com/hachibu/note.sh) - "A simple shell script for managing your random daily notes."
 
 ## Installation
 In your shell profile, set the name of the directory for your writer (where you want your writing to live):
