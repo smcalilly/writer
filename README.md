@@ -13,7 +13,6 @@ Restart your shell, then download and install:
 curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | bash
 cd "$WRITER_DIR"
 .src/install.sh
-cd ..
 ```
 
 This will download all the code and create a directory for all of your writing. It will also walk you through some steps to finish setting up your `writer`.
