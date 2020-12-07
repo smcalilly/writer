@@ -4,12 +4,19 @@ A CLI to write without restraint.
 Based upon [note.sh](https://github.com/hachibu/note.sh) - "A simple shell script for managing your random daily notes." Use `note.sh` if you want a simple note taking CLI. Use `writer` if you want a slightly less simple and somewhat opinionated (if you want) writing CLI.
 
 ## Installation
-Install with this clunky command, setting `WRITER_DIR` as the directory name where you want your writing to live:
+In your shell profile, set the name of the directory for your writer (where you want your writing to live):
 ```
-# download the code to a new $WRITER_DIR directory and `cd` into new directory
-(curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | WRITER_DIR='writer' bash) && cd "$WRITER_DIR"
+export WRITER_DIR='writer'
+```
+Restart your shell, then download and install:
+```
+# download the code 
+# be sure to use the curl command wrapped in the $(...) so the writer's directory is set
+$(curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | bash)
 
-# install the code
+# `cd` into the new $WRITER_DIR directory
+# and install the code
+cd "$WRITER_DIR"
 .src/install.sh
 cd ..
 ```
