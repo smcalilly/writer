@@ -83,13 +83,17 @@ function walkthrough_guide() {
 function usage() {
   echo "Usage: note.sh [action]"
   echo
-  echo "  actions:"
+  echo "  ACTIONS:"
+  echo "    -n [notepad for each day]"
   echo "    -f [file_name]"
   echo "    -d [directory]"
   echo "    -g grep [pattern]"
   echo
   echo
-#   walkthrough_guide
+  echo "  EXAMPLES:"
+  echo "      writer.sh -n                               # opens a daily note to write in"
+  echo "      writer.sh -d project-dir -f file-name      # opens a writing file named file-name in the project-dir"
+  echo "      writer.sh -g collards                      # searches for the word 'collards' in your writer"
 }
 
 # parse any arguments
@@ -134,12 +138,13 @@ else
     elif [[ $1 == "-n" ]]; then 
         mkdir -p "$writing_target/notes"
         writing_target="$writing_target/notes/$(date +'%Y-%m-%d').md"
-    else
-        writing_target="$writing_target/$(date +'%Y-%m-%d').md"
     fi
 
     echo $writing_target
 
     # Open text editor
+    set -o noclobber
     $EDITOR $writing_target
 fi
+
+walkthrough_guide > about.md
