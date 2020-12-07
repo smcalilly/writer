@@ -38,7 +38,7 @@ function usage() {
     echo "      writer.sh -g collards                      # searches for the word 'collards' in your writer"
     echo 
     echo
-    echo "visit https://github.com/smcalilly/writer#how-it-works for more details"
+    echo "  visit https://github.com/smcalilly/writer#how-it-works for more details"
     echo
     echo
     echo "~~!~~!--!~~!--!~~!~~"
@@ -67,6 +67,8 @@ done
 
 # todo bug: parse out any / from arguments
 
+input(){ local in; read in; echo $in; }  
+
 writing_target="$WRITER_DIR"
 
 if [ $# -eq 0 ]; then
@@ -88,9 +90,16 @@ else
         writing_target="$writing_target/notes/$(date +'%Y-%m-%d').md"
     fi
 
-    echo $writing_target
-
-    # Open text editor
-    set -o noclobber
-    $EDITOR $writing_target
+    if [ input ]; then 
+        # this came in through STDIN, 
+        # so just save it where it's intended
+        echo >> $writing_target
+        input >> $writing_target
+        echo; echo "Saved some writing to $writing_target"
+    else
+        # Open text editor
+        set -o noclobber
+        $EDITOR $writing_target
+        echo "bye writer"
+    fi
 fi
