@@ -48,16 +48,18 @@ function usage() {
 }
 
 # parse any arguments
-while getopts :snl:g:d:f: flag 
+while getopts :htsnl:g:d:f: flag 
 do
     case "${flag}" in
+        h) help=true;;
         f) file_name=${OPTARG};;
         d) directory=${OPTARG};;
         g) grp=${OPTARG};;
         s) stdin=true;;
 	    n) note=true;;
         l) listdir=${OPTARG};;
-        *) echo "You can't write. ${OPTARG}" is an unrecognized option && exit 0;;
+        t) trash=true;;
+        *) echo "You can't write. ${OPTARG}" is an unrecognized option. && exit 0;;
     esac
 done
 
@@ -65,13 +67,14 @@ writing_target="$WRITER_DIR"
 
 if [ $# -eq 0 ]; then
     usage
+elif [[ "${help:-}" ]]; then
+    usage
 elif [[ "${listdir:-}" ]]; then
     ls "$WRITER_DIR/$listdir"
 elif [ "${grp:-}" ]; then
     writing=$(grep -nr "$2" $WRITER_DIR -l)
     echo $writing
     less -p "$2" $writing 
-elif [ "${configure:-}"]
 else
     if [[ "${directory:-}" ]]; then
         writing_target="$writing_target/$directory"
@@ -91,6 +94,17 @@ else
         echo "" | tee >> $writing_target
         echo "$(</dev/stdin)" | tee >> $writing_target
         echo; echo "Saved some writing to $writing_target"
+    elif [[ "${trash:-}" ]]; then
+        echo "Are you sure you want to move your writing to the trash? [y/n]"
+        read response
+        if [[ "${response}" = [yY] ]]; then
+            original_path=$writing_target
+            name=$(basename $writing_target)
+            target="${original_pathpath%/*}/trash"
+            sudo mkdir -p $target
+            cp $writing_target "$target/$name"
+            rm $writing_target
+        fi
     else
         # Open text editor
         set -o noclobber
