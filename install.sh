@@ -10,8 +10,7 @@ set_user_editor() {
     # todo bug - need to validate editor
     echo "Thanks. Your writing will open in $EDITOR."
     
-    # bad way of adding the $EDITOR variable
-    echo $EDITOR
+    # bad way of adding the $EDITOR variable to the source code
     cat .src/pre-writer.sh | head -2 >> .src/writer.sh
     echo "export EDITOR=$EDITOR" >> .src/writer.sh
     cat .src/pre-writer.sh | tail -n +3 >> .src/writer.sh
@@ -153,14 +152,20 @@ echo
 
 
 echo "Your writer is setup! To write in your daily note, try:"
+echo
 echo "    writer.sh -n"
 echo
-echo "For help, try:"
+echo
+echo "To get some help, try:"
+echo
 echo "    writer.sh -h"
-read needs_walkthrough_guide
 
 echo 
-echo "-------"
+echo "~~!~~!--!~~!--!~~!~~"
+echo
+echo "   !   writer   !   "
+echo
+echo "~~!~~!--!~~!--!~~!~~"
 
 if [ "${needs_walkthrough_guide}" == 'y' ]; then
     walkthrough_guide
