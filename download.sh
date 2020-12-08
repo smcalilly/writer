@@ -9,11 +9,11 @@ if [ -n "${EDITOR+1}" ]; then
     touch "writer"
     chmod +x writer
 
-    curl "https://raw.githubusercontent.com/smcalilly/writer/main/writer.sh/src/writer.sh" -o writer
+    curl "https://raw.githubusercontent.com/smcalilly/writer/main/writer/src/writer" -o writer
     curl "https://raw.githubusercontent.com/smcalilly/writer/main/install.sh" -o install.sh
-    curl "https://raw.githubusercontent.com/smcalilly/writer/main/writer.sh/Makefile" -o Makefile
+    curl "https://raw.githubusercontent.com/smcalilly/writer/main/writer/Makefile" -o Makefile
 else
-    echo "Download failed."
+    echo "Unable to download."
     echo
     echo "You need to change the $EDITOR variable in your shell's startup file."
     echo "It might look like this:"
