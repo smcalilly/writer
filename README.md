@@ -21,7 +21,7 @@ curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | bash
 .src/install.sh
 ```
 
-This will download all the code into your new writing directory, which is where all of your writing will be saved. 
+This will download all the code into your new writing directory, which is where `writer` saves your writing. 
 
 ## quick start
 Write in your daily note:
