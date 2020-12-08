@@ -31,7 +31,7 @@ writer -d good-recipes -f turnip-green-soup         # Write to a named file with
 ```
 
 ### stdin
-The `writer` also takes stdin, with the `-s` flag:
+`writer` also accepts stdin, with the `-s` flag:
 ```
 echo "hello yall" | writer -s -n
 
