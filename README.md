@@ -10,8 +10,8 @@ export WRITER_DIR='writer'
 ```
 Restart your shell, then download and install:
 ```
+mkdir writing && cd writing
 curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | bash
-cd "$WRITER_DIR"
 .src/install.sh
 ```
 
