@@ -152,7 +152,11 @@ echo
 
 
 
-echo "Your writer is setup! Would you like to do a walkthrough guide? [y/n]:"
+echo "Your writer is setup! To write in your daily note, try:"
+echo "    writer.sh -n"
+echo
+echo "For help, try:"
+echo "    writer.sh -h"
 read needs_walkthrough_guide
 
 echo 
