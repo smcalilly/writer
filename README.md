@@ -22,7 +22,7 @@ Write in your daily note:
 ```
 writer -n
 ```
-That opens a note where you can write random thoughts each day. A new note is created each day.
+That command opens a note where you can write random thoughts each day. A new note is created each day.
 
 `writer` can also write to specific directories or filenames in your `writer` directory. This helps keep your notes or ideas or writing projects organized while still being able to write at moment's notice. Here are some more commands:
 ```
