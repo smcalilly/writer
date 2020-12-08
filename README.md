@@ -20,26 +20,15 @@ This will download all the code and create a directory for all of your writing. 
 ## quick start
 Write in your daily note:
 ```
-writer.sh -n
-```
-
-If you want to make an alias for the command, in your shell's startup file, add: 
-```
-alias writer='writer.sh'
-```
-
-Then, you can write in your daily note again:
-```
 writer -n
 ```
+That opens a note where you can write random thoughts each day. A new note is created each day.
 
-Here are some more commands:
+`writer` can also write to specific directories or filenames in your `writer` directory. This helps keep your notes or ideas or writing projects organized while still being able to write at moment's notice. Here are some more commands:
 ```
 writer -f vague-turnip-green-recipe-idea            # Write a note with a filename
 writer -d good-recipes                              # Write within a directory
 writer -d good-recipes -f turnip-green-soup         # Write to a named file within a directory
-writer -g turnip                                    # Search in your writer with grep, output in less
-writer -h                                           # Get some help
 ```
 
 ### stdin
@@ -47,13 +36,18 @@ The `writer` also takes stdin, with the `-s` flag:
 ```
 echo "hello yall" | writer -s -n
 
-writer -n -s<<<"woooooo" 
+writer -n -s<<<"woooooooooooooooooo" 
 
-echo "i can send sentences to named writing too" | writer -s -f test -d test-dir 
+echo "i can send sentences to a specific place, too" | writer -s -f test -d test-dir 
+```
+
+This is a useful feature if you're wanting to copy/paste something into a note or writing file. For instance, you're writing some code and need to get rid of a function but you like the function or learned something from writing the code, so you want to keep it. But you don't want to commit it to the project's version control. So you just send it to `writer`:
+```
+writer -d code-snippets -s<<<"function makeDoGood() { return true }"
 ```
 
 ## use with git
-I wanted version control for my writing, and git also lets me backup my writing and write on other devices, so this is the perfect setup to use git with my writing. You can either initialize it at the `writer`'s root directory or have an individual per directory/project.
+All of my writing projects need version control and a file system. `writer` takes care of the file system and `git` can easily be added to any of the directories. You can either initialize a repo at the `writer`'s root directory or have an individual repo per directory/project. `git` also lets me backup my writing and write on other devices. 
 
 
 ## how it works
