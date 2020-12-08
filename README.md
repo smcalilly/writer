@@ -6,7 +6,7 @@ Based upon [note.sh](https://github.com/hachibu/note.sh) - "A simple shell scrip
 ## installation
 Create a new directory for your `writer`. This is where all of your writing will live:
 ```
-mkdir writing && cd writing
+mkdir writing
 ```
 
 In your shell profile, set the name of your preferred text editor:
