@@ -26,12 +26,12 @@ function usage() {
     echo "Usage: writer.sh [action]"
     echo
     echo "  ACTIONS:"
-    echo "    -n [notepad for each day]"
-    echo "    -f [file_name]"
-    echo "    -d [directory]"
+    echo "    -n [write in your daily note]"
+    echo "    -f [write in a named file]"
+    echo "    -d [write in a specific directory]"
     echo "    -g grep [pattern]"
     echo "    -s [writing via stdin]"
-    echo "    -l [ls in the target directory"
+    echo "    -l [ls in the target directory]"
     echo
     echo
     echo "  EXAMPLES:"
