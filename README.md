@@ -59,11 +59,11 @@ writer -h
 ```
 
 ### stdin
-The writer also takes stdin:
+The writer also takes stdin, with the `-s` flag:
 ```
-echo "hello yall" | ./writer.sh -n
+echo "hello yall" | ./writer.sh -s -n
 
-./writer.sh -n <<<"woooooo" 
+./writer.sh -n -s<<<"woooooo" 
 
 echo "i can send sentences to named writing too" | ./writer.sh -f test -d test-dir 
 ```
