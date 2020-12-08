@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-export WRITER_DIR=/Users/sammcalilly/writing
-export EDITOR=nano
 set -euo pipefail
 set -o nounset
 set -o errtrace
