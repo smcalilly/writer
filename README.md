@@ -3,7 +3,7 @@ A CLI to write without restraint.
 
 Based upon [note.sh](https://github.com/hachibu/note.sh) - "A simple shell script for managing your random daily notes."
 
-## Installation
+## installation
 In your shell profile, set the name of the directory for your writer (where you want your writing to live):
 ```
 export WRITER_DIR='writer'
@@ -33,56 +33,44 @@ Then, you can write in your daily note again:
 writer -n
 ```
 
-Write a note with a filename:
+Here are some more commands:
 ```
-writer -f vague-turnip-green-recipe-idea
-```
-
-Write within a directory:
-```
-writer -d good-recipes
-```
-
-Write to a named file within a directory:
-```
-writer -d good-recipes -f turnip-green-soup
-```
-
-You can search through all the writing in your `writer` with `grep`. You'll view the results in `less`:
-```
-writer -g turnip
-```
-
-To get some help:
-```
-writer -h
+writer -f vague-turnip-green-recipe-idea            # Write a note with a filename
+writer -d good-recipes                              # Write within a directory
+writer -d good-recipes -f turnip-green-soup         # Write to a named file within a directory
+writer -g turnip                                    # Search in your writer with grep, output in less
+writer -h                                           # Get some help
 ```
 
 ### stdin
-The writer also takes stdin, with the `-s` flag:
+The `writer` also takes stdin, with the `-s` flag:
 ```
-echo "hello yall" | ./writer.sh -s -n
+echo "hello yall" | writer -s -n
 
-./writer.sh -n -s<<<"woooooo" 
+writer -n -s<<<"woooooo" 
 
-echo "i can send sentences to named writing too" | ./writer.sh -f test -d test-dir 
+echo "i can send sentences to named writing too" | writer -s -f test -d test-dir 
 ```
+
+## use with git
+I wanted version control for my writing, and git also lets me backup my writing and write on other devices, so this is the perfect setup to use git with my writing. You can either initialize it at the `writer`'s root directory or have an individual per directory/project.
+
 
 ## how it works
 The basic structure of the $WRITER_DIR directory should look like this:
 
 ```
-    $WRITER_DIR
-            |.src/
-            |
-            |notes/
-            |    |<todays-date>.md
+$WRITER_DIR
+        |.src/
+        |
+        |notes/
+        |    |<todays-date>.md
 ```
 
 ### notes
 This command will open a daily note to write in:
 ```
-    writer.sh -n                 # opens /notes/<todays-date>.md in $EDITOR 
+writer -n                 # opens /notes/<todays-date>.md in $EDITOR 
 ```
 
 A new file is created each day. It's like a staging area or organized dumping ground, but accessible quickly. An aggregation of notes in the same file throughout a day.  
@@ -93,12 +81,12 @@ A new file is created each day. It's like a staging area or organized dumping gr
 ### directories
 You can also create your own directories, like if you have a specific project where you want to write. Here is a command that will write a daily note in a new directory:
 ```
-    writer.sh -d my-manuscript -n       # writes to $WRITER_DIR/my-manuscript/<todays-date>.md
+writer -d my-manuscript -n       # writes to $WRITER_DIR/my-manuscript/<todays-date>.md
 ```
 
 You can also name a writing file in a directory:
 ```
-    writer.sh -d my-manuscript -f chapter-1       # writes to $WRITER_DIR/my-manuscript/chapter-5.md
+writer -d my-manuscript -f chapter-1       # writes to $WRITER_DIR/my-manuscript/chapter-5.md
 ```
 This can be organized however you wish - you can name directories within directories and files within those directories, and recall them via the CLI.
 
@@ -109,7 +97,7 @@ Once you've created a directory, you can work with it however you want, like in 
 ### filenames
 As seen above, you can declare a filename with the `-f` flag. You can use it like the `-n` flag and save a named note to your notes directory:
 ```
-    writer.sh -f recipe-idea                  # opens /notes/recipe-idea.md in $EDITOR
+writer -f recipe-idea                  # opens /notes/recipe-idea.md in $EDITOR
 ```
 
 That's helpful for creating a specific or thematic note that doesn't yet have a place to live.
@@ -122,13 +110,11 @@ Would you rather have a dated note with random scribbles throughout the day, or 
 
 You can search with grep:
 ```
-    writer.sh -g okra        # views all the files in /$WRITER_DIR with the word 'okra'
+writer -g okra        # views all the files in /$WRITER_DIR with the word 'okra'
 ```
 
-## Use with git
-I wanted version control for my writing, and git also lets me backup my writing and write on other devices, so this is the perfect setup to use git with my writing. You can either initialize it at the `writer`'s root directory or have an individual per directory/project.
 
-## Uninstall
+## uninstall
 ```
 cd $WRITER_DIR/.src
 make uninstall
