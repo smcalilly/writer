@@ -14,9 +14,9 @@ In your shell profile, set the name of your preferred text editor:
 export EDITOR='vim'
 ```
 
-Restart your shell, then download and install:
+Restart your shell and `cd` into your new writing directory. Then download and install:
 ```
-cd ~/writing
+cd writing
 curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | bash
 .src/install.sh
 ```
