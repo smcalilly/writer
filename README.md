@@ -37,10 +37,10 @@ echo "hello yall" | writer -s -n
 
 writer -n -s<<<"woooooooooooooooooo" 
 
-echo "i can send sentences to a specific place, too" | writer -s -f test -d test-dir 
+echo "i can send sentences to a specific place, too" | writer -s -f file-name -d dir-name
 ```
 
-This is a useful feature if you're wanting to copy/paste something into a note or writing file. For instance, you're writing some code and need to get rid of a function but you like the function or learned something while writing the code, so you want to keep it for future reference. But you don't want to commit it to the project's version control. So you just send it to `writer`:
+This is a useful feature if you're wanting to copy/paste something into a note or writing file. For example, you're writing some code and need to get rid of a function but you like the function or learned something while writing the code, so you want to keep it for future reference. But you don't want to commit it to the project's version control. So you just send it to `writer`:
 ```
 echo "function obsoleteButNoteworthy()" | writer -d code-snippets -s
 ```
