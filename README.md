@@ -4,18 +4,24 @@ A CLI to write without restraint.
 Based upon [note.sh](https://github.com/hachibu/note.sh) - "A simple shell script for managing your random daily notes."
 
 ## installation
-In your shell profile, set the name of the directory for your writer (where you want your writing to live):
+Create a new directory for your `writer`. This is where all of your writing will live:
 ```
-export WRITER_DIR='writer'
+mkdir writing
 ```
-Restart your shell, then download and install:
+
+In your shell profile, set the name of your preferred text editor:
 ```
-mkdir writing && cd writing
+export EDITOR='vim'
+```
+
+Restart your shell and `cd` into your new writing directory. Then download and install:
+```
+cd writing
 curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | bash
 .src/install.sh
 ```
 
-This will download all the code and create a directory for all of your writing. It will also walk you through some steps to finish setting up your `writer`.
+This will download all the code into your new writing directory, which is where all of your writing will be saved. 
 
 ## quick start
 Write in your daily note:
