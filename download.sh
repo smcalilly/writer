@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-
-if [ -n "${EDITOR+1}" ]; then
+if [[ -n "${EDITOR+1}" ] && [ -n "${WRITER_DIR+1}" ]]; then
+    cd $WRITER_DIR
     mkdir -p ".src" && cd .src
     touch "install.sh"
     chmod +x install.sh
@@ -15,8 +15,9 @@ if [ -n "${EDITOR+1}" ]; then
 else
     echo "Unable to download."
     echo
-    echo "You need to change the $EDITOR variable in your shell's startup file."
+    echo "You need to set the $WRITER_DIR and $EDITOR variables in your shell's startup file."
     echo "It might look like this:"
     echo
+    echo "      export WRITER_DIR=writing"
     echo "      export EDITOR=vim"
 fi

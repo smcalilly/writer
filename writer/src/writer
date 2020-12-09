@@ -4,6 +4,11 @@ set -o nounset
 set -o errtrace
 set -o errexit
 
+if [ -z ${WRITER_DIR+x} ]; then
+  echo "Error: Please configure and export WRITER_DIR environment variable."
+  exit 1
+fi
+
 if [ -z ${EDITOR+x} ]; then
   echo "Error: Please configure and export EDITOR environment variable."
   exit 1
@@ -58,9 +63,7 @@ do
     esac
 done
 
-writing_target=$(dirname "$BASH_SOURCE")
-script_dir=$(dirname $0)
-writing_target="$(dirname $script_dir)"
+writing_target="$WRITER_DIR"
 
 if [ $# -eq 0 ]; then
     usage
