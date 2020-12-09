@@ -99,11 +99,12 @@ else
         read response
         if [[ "${response}" = [yY] ]]; then
             original_path=$writing_target
-            name=$(basename $writing_target)
-            target="${original_pathpath%/*}/trash"
-            sudo mkdir -p $target
-            cp $writing_target "$target/$name"
+		    name=$(basename $writing_target)
+		    target="${original_path%/*}/trash"
+            mkdir -p $target
+            cat $writing_target > "$target/$name"
             rm $writing_target
+            echo "Bad writing moved to trash !"
         fi
     else
         # Open text editor
