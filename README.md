@@ -29,7 +29,7 @@ This setup has been tested on:
 - MacOS Mojave with bash
 - Raspberry Pi OS with bash
 
-If you have any issues or bugs, please open an issue!
+You can inspect the code at `download.sh`, `install.sh`, and `/writer/src/writer`, but I can vouch that there is nothing malicious in that `curl | bash` download! Harmless bugs are the only thing you might download, so if you have any issues or bugs or problems downloading/installing, please open an issue!
 
 ## quick start
 Write in your daily note:
