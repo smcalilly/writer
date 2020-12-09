@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ -n "${EDITOR+1}" ] && [ -n "${WRITER_DIR+1}" ]]; then
+if [ -n "${EDITOR+1}" ] && [ -n "${WRITER_DIR+1}" ]; then
     cd $WRITER_DIR
     mkdir -p ".src" && cd .src
     touch "install.sh"
