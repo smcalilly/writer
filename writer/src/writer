@@ -35,10 +35,10 @@ function usage() {
     echo
     echo
     echo "  EXAMPLES:"
-    echo "      writer.sh -n                               # opens a daily note to write in"
-    echo "      writer.sh -d project-dir -f file-name      # opens a writing file named file-name in the project-dir"
-    echo "      writer.sh -g collards                      # searches for the word 'collards' in your writer"
-    echo "      writer.sh -l .                             # lists all files in the root of your writer"
+    echo "      writer -n                               # opens a daily note to write in"
+    echo "      writer -d project-dir -f file-name      # opens a writing file named file-name in the project-dir"
+    echo "      writer -g collards                      # searches for the word 'collards' in your writer"
+    echo "      writer -l .                             # lists all files in the root of your writer"
     echo 
     echo
     echo "  visit https://github.com/smcalilly/writer#how-it-works for more details"
@@ -56,7 +56,7 @@ do
         d) directory=${OPTARG};;
         g) grp=${OPTARG};;
         s) stdin=true;;
-	    n) note=true;;
+	n) note=true;;
         l) listdir=${OPTARG};;
         t) trash=true;;
         *) echo "You can't write. ${OPTARG}" is an unrecognized option. && exit 0;;
