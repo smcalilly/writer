@@ -1,7 +1,7 @@
 # writer
 A CLI to write without restraint. 
 
-Based upon [note.sh](https://github.com/hachibu/note.sh) - "A simple shell script for managing your random daily notes."
+Based upon [note.sh](https://github.com/hachibu/note.sh): "A simple shell script for managing your random daily notes."
 
 ## installation
 In your shell profile, export the name of your preferred text editor and the name of the directory where you want your writing to live:
