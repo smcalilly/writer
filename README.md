@@ -24,7 +24,7 @@ curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | bash
 
 This will download all the code into your new writing directory, which is where `writer` saves your writing. 
 
-This setup has been tested on 
+This setup has been tested on: 
 - MacOS Catalina with zsh 
 - MacOS Mojave with bash
 - Raspberry Pi Raspbian with bash
