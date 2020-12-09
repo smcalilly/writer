@@ -27,7 +27,7 @@ This will download all the code into your new writing directory, which is where 
 This setup has been tested on: 
 - MacOS Catalina with zsh 
 - MacOS Mojave with bash
-- Raspberry Pi Raspbian with bash
+- Raspberry Pi OS with bash
 
 If you have any issues or bugs, please open an issue!
 
