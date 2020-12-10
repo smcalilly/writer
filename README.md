@@ -75,8 +75,8 @@ $WRITER_DIR
 
 ### notes
 This command will open a daily note to write in:
-```
-writer -n                 # opens /notes/<todays-date>.md in $EDITOR 
+``` 
+writer -n                                  # opens /notes/<todays-date>.md in $EDITOR 
 ```
 
 A new file is created each day. It's like a staging area or organized dumping ground, but accessible quickly. An aggregation of notes in the same file throughout a day.  
@@ -87,23 +87,21 @@ A new file is created each day. It's like a staging area or organized dumping gr
 ### directories
 You can also create your own directories, like if you have a specific project where you want to write. Here is a command that will write a daily note in a new directory:
 ```
-writer -d my-manuscript -n       # writes to $WRITER_DIR/my-manuscript/<todays-date>.md
+writer -d my-manuscript -n                 # $WRITER_DIR/my-manuscript/<todays-date>.md in $EDITOR
 ```
 
 You can also name a writing file in a directory:
 ```
-writer -d my-manuscript -f chapter-1       # writes to $WRITER_DIR/my-manuscript/chapter-5.md
+writer -d my-manuscript -f chapter-1       # $WRITER_DIR/my-manuscript/chapter-5.md in $EDITOR
 ```
 This can be organized however you wish - you can name directories within directories and files within those directories, and recall them via the CLI.
 
-Of course, you don't have to use the CLI; it's just a handy way to write from your terminal.
-Once you've created a directory, you can work with it however you want, like in your favorite text editor with a file system interface.
-
+Of course, you don't have to use the CLI; it's just a handy way to write from your terminal. Once you've created a directory, you can work with it however you want, like in your favorite text editor with a file system interface.
 
 ### filenames
 As seen above, you can declare a filename with the `-f` flag. You can use it like the `-n` flag and save a named note to your notes directory:
 ```
-writer -f recipe-idea                  # opens /notes/recipe-idea.md in $EDITOR
+writer -f recipe-idea                      # opens /recipe-idea.md in $EDITOR in $EDITOR
 ```
 
 That's helpful for creating a specific or thematic note that doesn't yet have a place to live.
