@@ -40,7 +40,6 @@ That command opens a note where you can write random thoughts. A new note is cre
 
 `writer` can also write to specific directories or filenames in your `writer` directory. This helps keep your notes or ideas or writing projects organized while still being able to write at moment's notice. Here are some commands:
 ```
-writer -d good-recipes                              # Write a daily note within a directory
 writer -d good-recipes -f turnip-green-soup         # Write to a named file within a directory
 ```
 
