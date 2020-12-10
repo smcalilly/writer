@@ -114,7 +114,7 @@ Would you rather have a dated note with random scribbles throughout the day, or 
 
 You can search with grep:
 ```
-writer -g okra        # views all the files in /$WRITER_DIR with the word 'okra'
+writer -g turnip                           # views all the files in /$WRITER_DIR with the word 'turnip'
 ```
 
 
