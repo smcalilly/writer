@@ -1,3 +1,4 @@
+This is the from the original project by @hachibu
 ![](assets/logo.png)
 
 # note.sh
