@@ -4,20 +4,20 @@ A CLI to write without restraint.
 Based upon [note.sh](https://github.com/hachibu/note.sh): "A simple shell script for managing your random daily notes."
 
 ## installation
-In your shell profile, export the name of your preferred text editor and the name of the directory where you want your writing to live:
+1. In your shell profile, export the name of your preferred text editor and the name of the directory where you want your writing to live:
 ```
 export EDITOR=vim
 export WRITER_DIR=$HOME/writing
 ```
 **It's important you prepend your `$HOME` path to the writing directory.** Otherwise, `writer` might get confused about your desired writing destination.
 
-Restart your shell to source the new environment variables. Make a new `$WRITER_DIR` directory and `cd` into your new writing directory:
+2. Restart your shell to source the new environment variables. Make a new `$WRITER_DIR` directory and `cd` into your new writing directory:
 ```
 mkdir "$WRITER_DIR"
 cd "$WRITER_DIR"
 ```
 
-Then download and install:
+3. Then download and install:
 ```
 curl https://raw.githubusercontent.com/smcalilly/writer/main/download.sh | bash
 .src/install.sh
@@ -54,7 +54,7 @@ writer -n -s<<<"woooooooooooooooooo"
 echo "i can send sentences to a specific place, too" | writer -s -f file-name -d dir-name
 ```
 
-This is a useful feature if you're wanting to copy/paste something into a note or writing file. For example, you're writing some code and need to get rid of a function but you like the function or learned something while writing the code, so you want to keep it for future reference. But you don't want to commit it to the project's version control. Or your co-worker wrote some good code and you want to keep it and learn it. So you just send it to `writer`:
+This is a useful feature if you're wanting to copy/paste something into a note or writing file. For example, you're writing some code and need to get rid of a function but you like the function or learned something while writing the code, so you want to keep it for future reference. But you don't want to commit it to the project's version control. Or you read somebody's good code and you want to keep it and learn from it. So you just send it to `writer`:
 ```
 echo "function noteworthyFunction()" | writer -d code-snippets -s
 ```
@@ -62,6 +62,7 @@ echo "function noteworthyFunction()" | writer -d code-snippets -s
 ## use with git
 All of my writing projects need version control and a file system. `writer` takes care of the file system and `git` can easily be added to any of the directories. You can either initialize a repo at the `writer`'s root directory or have an individual repo per directory/project. `git` also lets me backup my writing and write on other devices. 
 
+Setting up your `writer` with `git` can be helpful for working across computers which might need shared knowledge, but you don't want to give access to your personal cloud. For example, I have a Rapsberry Pi home server that I use to explore/learn Linux. Whenever I learn something new or want to remember a command or something, I write it to some markdown note files. I've never had a good way to replicate and share and expand upon this knowledge. Now, with `writer`, all of my notes live in a remote directory, which I can download and write in and edit on any device. Same with my work computer or my home computer. I can code at work and write notes and things I've learned a share them across computers, in a simple file type (markdown) with a Unix CLI.
 
 ## how it works
 The basic structure of the $WRITER_DIR directory should look like this:
