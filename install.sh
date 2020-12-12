@@ -37,7 +37,7 @@ echo
 
 cd .src
 
-$(make install 2> /dev/null)
+$(make install >/dev/null)
 
 
 echo "Your writer is setup! To write in your daily note, try:"
