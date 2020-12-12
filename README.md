@@ -6,9 +6,10 @@ Based upon [note.sh](https://github.com/hachibu/note.sh): "A simple shell script
 ## installation
 In your shell profile, export the name of your preferred text editor and the name of the directory where you want your writing to live:
 ```
-export EDITOR='vim'
-export WRITER_DIR='writing'
+export EDITOR=vim
+export WRITER_DIR=$HOME/writing
 ```
+**It's important you prepend your `$HOME` path to the writing directory.** Otherwise, `writer` might get confused about your desired writing destination.
 
 Restart your shell to source the new environment variables. Make a new `$WRITER_DIR` directory and `cd` into your new writing directory:
 ```
