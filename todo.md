@@ -5,3 +5,5 @@
 - write tests... how in bash?
 - refactor those ugly conditionals and find a better way to determine what to do based on argument
 - better arguments so i can parse words
+- stdout !
+- uninstall command?
