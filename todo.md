@@ -7,3 +7,5 @@
 - better arguments so i can parse words
 - stdout !
 - uninstall command?
+- different file types?
+- named notes without a directory go to root directory. make it go to notes.

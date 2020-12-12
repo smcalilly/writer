@@ -26,19 +26,21 @@ function usage() {
     echo "Usage: writer [action]"
     echo
     echo "  ACTIONS:"
-    echo "    -n                # write in your daily note"
-    echo "    -f [file-name]    # write to a filename"
-    echo "    -d [directory]    # write in a specific directory"
+    echo "    -n                             # write in your daily note"
+    echo "    -f [file-name]                 # write to a filename"
+    echo "    -d [directory]                 # write in a specific directory"
     echo "    -g grep [pattern]"
-    echo "    -s                # write via stdin"
-    echo "    -l [directory]    # lists everything in the target directory"
+    echo "    -s                             # write via stdin"
+    echo "    -l [directory]                 # lists everything in the target directory"
+    echo "    -t [directory] [file-name]     # moves writing to a trash directory, within target directory"
     echo
     echo
     echo "  EXAMPLES:"
-    echo "      writer -n                               # opens a daily note to write in"
-    echo "      writer -d project-dir -f file-name      # opens a writing file named file-name in the project-dir"
-    echo "      writer -g collards                      # searches for the word 'collards' in your writer"
-    echo "      writer -l .                             # lists all files in the root of your writer"
+    echo "      writer -n                                 # opens a daily note to write in"
+    echo "      writer -d project-dir -f file-name         # opens a writing file named file-name in the project-dir"
+    echo "      writer -g collards                         # searches for the word 'collards' in your writer"
+    echo "      writer -l .                                # lists all files in the root of your writer"
+    echo "      writer -t -d project-dir -f file-name      # moves file-name to /project-dir/trash directory"
     echo 
     echo
     echo "  visit https://github.com/smcalilly/writer#how-it-works for more details"
@@ -56,7 +58,7 @@ do
         d) directory=${OPTARG};;
         g) grp=${OPTARG};;
         s) stdin=true;;
-	n) note=true;;
+	    n) note=true;;
         l) listdir=${OPTARG};;
         t) trash=true;;
         *) echo "You can't write. ${OPTARG}" is an unrecognized option. && exit 0;;
