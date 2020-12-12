@@ -9,7 +9,7 @@ echo
 echo "~~!~~!--!~~!--!~~!~~"
 echo
 echo
-echo "Hi - hope you are well. Thanks for downloading writer."
+echo "Hi writer - hope you are well. Thanks for downloading writer."
 echo
 echo "Whenever you use this CLI, your writing will automatically open in a text editor."
 
