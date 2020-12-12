@@ -37,6 +37,7 @@ Write in your daily note:
 ```
 writer -n
 ```
+
 That command opens a note where you can write random thoughts. A new note is created each day. This is the influence of [note.sh](https://github.com/hachibu/note.sh) on this project.
 
 `writer` can also write to specific directories or filenames in your `writer` directory. This helps keep your notes or ideas or writing projects organized while still being able to write at moment's notice. Here are some commands:
@@ -59,11 +60,6 @@ This is a useful feature if you're wanting to copy/paste something into a note o
 echo "function noteworthyFunction()" | writer -d code-snippets -s
 ```
 
-## use with git
-All of my writing projects need version control and a file system. `writer` takes care of the file system and `git` can easily be added to any of the directories. You can either initialize a repo at the `writer`'s root directory or have an individual repo per directory/project. `git` also lets me backup my writing and write on other devices. 
-
-Setting up your `writer` with `git` can be helpful for working across computers which might need shared knowledge, but you don't want to give access to your personal cloud. For example, I have a Rapsberry Pi home server that I use to explore/learn Linux. Whenever I learn something new or want to remember a command or something, I write it to some markdown note files. I've never had a good way to replicate and share and expand upon this knowledge. Now, with `writer`, all of my notes live in a remote directory, which I can download and write in and edit on any device. Same with my work computer or my home computer. I can code at work and write notes and things I've learned a share them across computers, in a simple file type (markdown) with a Unix CLI.
-
 ## how it works
 The basic structure of the $WRITER_DIR directory should look like this:
 
@@ -81,9 +77,7 @@ This command will open a daily note to write in:
 writer -n                                  # opens /notes/<todays-date>.md in $EDITOR 
 ```
 
-A new file is created each day. It's like a staging area or organized dumping ground, but accessible quickly. An aggregation of notes in the same file throughout a day.  
-
-**Important!** If you change the names of the `notes` directory, it will break this feature of CLI.
+A new file is created each day. It's like a staging area or organized dumping ground, but accessible quickly. An aggregation of notes in the same file throughout a day. **Important!** If you change the names of the `notes` directory, it will break this feature of CLI.
 
 
 ### directories
@@ -96,9 +90,7 @@ You can also name a writing file in a directory:
 ```
 writer -d my-manuscript -f chapter-1       # $WRITER_DIR/my-manuscript/chapter-5.md in $EDITOR
 ```
-This can be organized however you wish - you can name directories within directories and files within those directories, and recall them via the CLI.
-
-Of course, you don't have to use the CLI; it's just a handy way to write from your terminal. Once you've created a directory, you can work with it however you want, like in your favorite text editor with a file system interface.
+This can be organized however you wish - you can name directories within directories and files within those directories, and recall them via the CLI. Of course, you don't have to use the CLI; it's just a handy way to write from your terminal. Once you've created a directory, you can work with it however you want, like in your favorite text editor with a file system interface.
 
 ### filenames
 As seen above, you can declare a filename with the `-f` flag. You can use it like the `-n` flag and save a named note to your notes directory:
@@ -106,10 +98,7 @@ As seen above, you can declare a filename with the `-f` flag. You can use it lik
 writer -f recipe-idea                      # opens /recipe-idea.md in $EDITOR in $EDITOR
 ```
 
-That's helpful for creating a specific or thematic note that doesn't yet have a place to live.
-
-Both the daily note and a named note can be used the same way. It's just a matter of preference.
-Would you rather have a dated note with random scribbles throughout the day, or do you want to name your notes? How about both?
+That's helpful for creating a specific or thematic note that doesn't yet have a place to live. Both the daily note and a named note can be used the same way. It's just a matter of preference. Would you rather have a dated note with random scribbles throughout the day, or do you want to name your notes? How about both?
  
 
 ### search
@@ -119,6 +108,10 @@ You can search with grep:
 writer -g turnip                           # views all the files in /$WRITER_DIR with the word 'turnip'
 ```
 
+## use with git
+All of my writing projects need version control and a file system. `writer` takes care of the file system and `git` can easily be added to any of the directories. You can either initialize a repo at the `writer`'s root directory or have an individual repo per directory/project. `git` also lets me backup my writing and write on other devices. 
+
+Setting up your `writer` with `git` can be helpful for working across computers which might need shared knowledge, but you don't want to give access to your personal cloud. For example, I have a Rapsberry Pi home server that I use to explore/learn Linux. Whenever I learn something new or want to remember a command or something, I write it to some markdown note files. I've never had a good way to replicate and share and expand upon this knowledge. Now, with `writer`, all of my notes live in a remote directory, which I can download and write in and edit on any device. Same with my work computer or my home computer. I can code at work and write notes and things I've learned a share them across computers, in a simple file type (markdown) with a Unix CLI.
 
 ## uninstall
 ```
