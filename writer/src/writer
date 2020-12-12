@@ -88,6 +88,12 @@ else
         writing_target="$writing_target/notes/$(date +'%Y-%m-%d').md"
     fi
 
+    # in case the user writes to a directory without a file name
+    if [[ "$writing_target" != "*.md" ]]; then
+        mkdir -p "$writing_target/notes"
+        writing_target="$writing_target/notes/$(date +'%Y-%m-%d').md"
+    fi
+
     if [ "${stdin:-}" ]; then 
         # this came in through STDIN, 
         # so just save it where it's intended
